@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.js & vue-cli-service serve & json-server -d 1500 db.json user.json",
+    "start": "node server.js & vue-cli-service serve",
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {

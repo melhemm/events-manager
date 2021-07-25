@@ -2,7 +2,7 @@ import axios from 'axios'
 import NProgress from 'nprogress'
 
 const apiClient = axios.create({
-  baseURL: `http://localhost:3000`,
+  baseURL: `https://my-json-server.typicode.com/melhemm/json-db`,
   withCredentials: false, // This is the default
   headers: {
     Accept: 'application/json',
