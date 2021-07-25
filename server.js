@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const fs = require('fs')
-const port = process.env.PORT || 5500;
+const port = process.env.PORT || 8080;
 
 const app = express()
 
@@ -21,6 +21,22 @@ app.get('/', (req, res) => {
 app.get('/.*', function(req, res){
   res.sendFile(__dirname + "/dist/index.html")
 })
+
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + "/dist/index.html")
+})
+
+app.get('/register', (req, res) => {
+  res.sendFile(__dirname + "/dist/index.html")
+})
+
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", '*');
+//   res.header("Access-Control-Allow-Credentials", true);
+//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+//   res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+//   next();
+// });
 
 app.get('/', verifyToken, (req, res) => {
   jwt.verify(req.token, 'the_secret_key', err => {

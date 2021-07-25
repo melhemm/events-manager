@@ -26,13 +26,13 @@ export default new Vuex.Store({
   },
   actions: {
     register({commit}, credentials) {
-      return axios.post('http://localhost:5500/register', credentials)
+      return axios.post('http://localhost:8080/register', credentials)
       .then(({data}) => {
         commit('SET_USER_DATA', data)
       })
     },
     login({commit}, credentials) {
-      return axios.post('http://localhost:5500/login', credentials)
+      return axios.post('http://localhost:8080/login', credentials)
       .then(({data}) => {
         commit('SET_USER_DATA', data)
       })
