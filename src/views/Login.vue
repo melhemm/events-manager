@@ -1,7 +1,7 @@
 <template>
   <div class="row container">
-    <span>Почта: admin@admin.com</span> <br>
-    <span>Пароль: 123456</span>
+    <span>Почта: jamal@gmail.com</span> <br>
+    <span>Пароль: 1234567</span>
     <form class="col s12" @submit.prevent="login">
 
       <div class="input-field col s6">

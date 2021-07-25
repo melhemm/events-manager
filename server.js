@@ -47,7 +47,7 @@ app.post('/register', (req, res) => {
     }
 
     const data = JSON.stringify(user, null, 2)
-    var dbUserEmail = require('./src/db/user.json').email
+    var dbUserEmail = require('./db.json').email
     var errorsToSend = []
     if (dbUserEmail === user.email) {
       errorsToSend.push('An account with this email already exists')
@@ -57,7 +57,7 @@ app.post('/register', (req, res) => {
       res.status(400).json({errors: errorsToSend})
     }
     else {
-      fs.writeFile('./src/db/user.json', data, err => {
+      fs.writeFile('./db.json', data, err => {
         if (err) {
           console.log(err + data)
         } else {
@@ -76,7 +76,7 @@ app.post('/register', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-  const userDB = fs.readFileSync('./src/db/user.json')
+  const userDB = fs.readFileSync('./db.json')
   const userInfo = JSON.parse(userDB)
   if (
     req.body &&
